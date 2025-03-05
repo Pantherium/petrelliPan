@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Ephesis&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Tangerine:wght@400;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+    --color-marronaso: rgb(25, 16, 0); /* #191000 */
+    --color-marron: rgb(133, 91, 7); /* #855b07 */
+    --color-dorado: rgb(161, 133, 49); /* #a18531 */
+    --color-beige: rgb(202, 182, 109); /* #cab66d */
+    --color-beigeClaro: rgb(228, 218, 182); /* #e4dab6 */
+    --color-beigeOscuro: rgb(118, 106, 63); /* #766a3f */
+
+    --blur-xs: 2px;
+    --blur-xxs: 1px;
+
+    --font-tangerine: "Tangerine", serif;
+    --font-ephesis: "Ephesis", serif;
+    --font-open-sans: "Open Sans", sans-serif;
+    --font-cormorant: "Cormorant", serif;
+
+    --shadow-inner-soft: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.55);
+    --shadow-inner-strong: inset 0px 0px 30px 10px rgba(0, 0, 0, 0.75);
+    --shadow-inner-strongxl: inset 0px 0px 30px 10px rgba(0, 0, 0, 1);
+    --shadow-prev-next-button: 0px 0px 50px 25px rgba(161, 133, 49, 0.5);
+
+    --drop-shadow-hoverLogoShadow: 0px 0px 3px var(--color-marron);
+    --drop-shadow-activeLogoShadow: 0px 0px 5px var(--color-dorado);
+    --drop-shadow-navTextShadow: 1.7px 1.7px var(--color-marron);
+    --drop-shadow-hoverNavTextShadow: 0px 0px 5px var(--color-dorado);
+
+    --animate-slideDown: slideDown 0.5s ease-in forwards;
+    --animate-slideUp: slideUp 0.5s ease-out forwards;
+    --animate-slideRtL: slideRtL 1.5s ease-in forwards;
+    --animate-slideLtR: slideLtR 1.5s ease-in forwards;
+
+    --breakpoint-navBarDesk: 55rem;
+    --breakpoint-cardMin: 1217px;
+    --breakpoint-cardMax: 1617px;
+
+    @keyframes slideRtL {
+        0% {
+            left: 300px;
+        }
+        100% {
+            left: 0px;
+        }
+    }
+
+    @keyframes slideLtR {
+        0% {
+            right: 300px;
+        }
+        100% {
+            right: 0px;
+        }
+    }
+
+    @keyframes slideUp {
+        0% {
+            opacity: 1;
+            max-height: 300px;
+        }
+        100% {
+            opacity: 0;
+            max-height: 0;
+        }
+    }
+
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            max-height: 0;
+        }
+        100% {
+            opacity: 1;
+            max-height: 300px;
+        }
+    }
+}
+
+@layer components {
+    .text-shadow {
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+    }
+    .carouselInner {
+        @apply flex size-full -translate-x-full;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carouselObject {
+        @apply size-full min-w-full object-cover;
+    }
+
+    .card {
+        @apply flex items-center overflow-hidden flex-col rounded-3xl bg-cover bg-center relative border-solid border-3 border-dorado; /* Propiedades fijas de la tarjeta */
+        @apply w-80 h-107 my-5 mx-5 md:w-90 md:h-120; /* Tamaño en pantallas pequeñas y grandes */
+        @apply bg-marronaso; /* Fondo por si no hay nada */
+    }
+
+    .cardLink {
+        @apply absolute blur-2xl w-1/6 h-full z-100 cursor-pointer transition duration-200 ease-in-out;
+    }
+    .cardArrow {
+        @apply top-1/3 w-auto mt-10 z-150 absolute py-5 px-4.5 overflow-hidden select-none pointer-events-none;
+    }
+
+    .cardInnerStyle {
+        @apply bg-dorado/60 border-solid border-dorado shadow-inner-soft;
+    }
+
+    .patronFondoDiamantes {
+        background: repeating-linear-gradient(
+                60deg,
+                transparent 65px,
+                rgba(25, 16, 0, 0.5) 10px,
+                rgba(43, 27, 0, 0.5) 90px
+            ),
+            repeating-linear-gradient(
+                120deg,
+                transparent 65px,
+                rgba(25, 16, 0, 0.75) 10px,
+                rgba(43, 27, 0, 0.75) 90px
+            ),
+            repeating-linear-gradient(
+                180deg,
+                transparent 65px,
+                rgba(25, 16, 0, 1) 10px,
+                rgba(43, 27, 0, 1) 90px
+            );
+    }
+
+    .banner-parallax {
+        @apply will-change-transform translate-y-0 bg-no-repeat bg-center bg-cover;
+    }
+
+    .shadowTransition {
+        @apply transition-all duration-500 ease-in-out;
+    }
+
+    .activeIlu:has(path:active) .shadowTransition {
+        @apply drop-shadow-activeLogoShadow;
+    }
+
+    .hoverIlu:has(path:hover) .shadowTransition {
+        @apply drop-shadow-hoverLogoShadow;
+    }
+
+    .border-navbar {
+        border-top-style: ridge;
+        border-bottom-style: groove;
+        border-width: 9px 0px 6px 0px;
+        @apply border-beige;
+    }
+
+    .border-footer {
+        border-top-style: ridge;
+        border-width: 8px 0px 0px 0px;
+        @apply border-beige;
+    }
+
+    .border-banner {
+        border-bottom-style: solid;
+        border-width: 0px 0px 5px 0px;
+        @apply border-beige;
+    }
+
+    html {
+        @apply bg-[url('./recursos/fondos/LightFondo.png')] bg-[auto_300px];
+    }
+}
