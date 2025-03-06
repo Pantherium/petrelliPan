@@ -1,10 +1,13 @@
 <nav
     class="border-navbar patronFondoDiamantes h-fit min-w-full max-w-full shadow-inner-strong"
 >
+    <!--⬆⬆⬆Contenedor principal de la navbar-->
     <div
         class="flex-wrap flex h-full items-center justify-center bg-transparent navBarDesk:justify-between"
     >
+        <!--⬆⬆⬆Contenedor sub-principal de la navbar que aplica efecto de doble borde. Acá van los logos y el texto-->
         <div class="hoverIlu m-2 hidden h-20 w-fit navBarDesk:block">
+            <!--⬆⬆⬆Contenedor del logo que una da altura fija {pantallas grandes}. Aplica iluminación en hover-->
             <svg viewBox="0 0 270 78.38" class="h-full shadowTransition">
                 <image href="./recursos/Logo.svg" />
                 <a href="#">
@@ -22,6 +25,7 @@
             class="hoverIlu my-2 h-24 w-full transition-all navBarDesk:hidden"
             id="logoDrop"
         >
+            <!--⬆⬆⬆Contenedor del toggler de la navbar para cuando el tamaño de la ventana se reduce y que da una altura fija {pantallas chicas} -->
             <svg class="shadowTransition h-full w-full" viewBox="0 0 270 105">
                 <image href="./recursos/LogoToggle.svg" />
                 <a href="#">
@@ -40,9 +44,11 @@
             class="hidden h-full w-60 select-none overflow-hidden transition-all navBarDesk:block navBarDesk:w-fit"
             id="menu"
         >
+            <!--⬆⬆⬆Contenedor DEL contenedor de los links de la navbar. Para el modo celular. -->
             <div
                 class="font-cormorant font-bold mb-4 flex flex-col space-y-5 px-3 py-2 text-center text-[29px] text-beige navBarDesk:mb-0 navBarDesk:flex-row navBarDesk:space-x-3 navBarDesk:space-y-0 navBarDesk:min-w-136 navBarDesk:justify-end navBarDesk:mr-5"
             >
+                <!--⬆⬆⬆Contenedor de los links de la navbar -->
                 <p class="hover:drop-shadow-hoverNavTextShadow">
                     <a
                         class="drop-shadow-navTextShadow hover:underline decoration-1 underline-offset-4"

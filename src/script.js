@@ -7,48 +7,55 @@
 // =====================================================
 
 /* ---------------------------INSERCIÓN DE CÓDIGO REUTILIZABLE--------------------------- */
-fetch('navbar.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('theNavbar').innerHTML = data;
-        /* ---------------------------SLIDERNAVBAR--------------------------- */
-        const toggleButton = document.getElementById("toggleButton");
-        const menu = document.getElementById("menu");
-        const logoDrop = document.getElementById("logoDrop");
+document.addEventListener("DOMContentLoaded", function () {
+    /* --------NAVBAR-------- */
+    fetch('./navbar.xml')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('theNavbar').innerHTML = data;
+            const toggleButton = document.getElementById("toggleButton");
+            const menu = document.getElementById("menu");
+            const logoDrop = document.getElementById("logoDrop");
 
-        toggleButton.addEventListener("click", () => {
-            if (menu.classList.contains("hidden")){
+            toggleButton.addEventListener("click", () => {
+                if (menu.classList.contains("hidden")){
 
-                // Mostrar el menú con animación de entrada
-                logoDrop.classList.add("drop-shadow-activeLogoShadow")
-                menu.classList.remove("hidden");
-                menu.classList.add("animate-slideDown");
-                // Quitar la animación después de que termine
-                menu.addEventListener(
-                    "animationend", () => {
-                        menu.classList.remove("animate-slideDown");
-                    },
+                    // Mostrar el menú con animación de entrada
+                    logoDrop.classList.add("drop-shadow-activeLogoShadow")
+                    menu.classList.remove("hidden");
+                    menu.classList.add("animate-slideDown");
+                    // Quitar la animación después de que termine
+                    menu.addEventListener(
+                        "animationend", () => {
+                            menu.classList.remove("animate-slideDown");
+                        },
 
-                    { once: true } // Se ejecuta  solo una vez por evento
-                );
-            } else {
+                        { once: true } // Se ejecuta  solo una vez por evento
+                    );
+                } else {
 
-                // Animación de salida
-                menu.classList.add("animate-slideUp");
-                logoDrop.classList.remove("drop-shadow-activeLogoShadow")
+                    // Animación de salida
+                    menu.classList.add("animate-slideUp");
+                    logoDrop.classList.remove("drop-shadow-activeLogoShadow")
 
-                // Esperar a que termine la animación antes de ocultar
-                menu.addEventListener(
-                    "animationend", () => {
-                        menu.classList.remove("animate-slideUp");
-                        menu.classList.add("hidden"); // Oculta después de animar
-                    },
-                    { once: true }
-        );}});
-        /* ---------------------------SLIDERNAVBAR--------------------------- */
-    })
-    .catch(err => console.error('Error al cargar la navbar: ', err));
-
+                    // Esperar a que termine la animación antes de ocultar
+                    menu.addEventListener(
+                        "animationend", () => {
+                            menu.classList.remove("animate-slideUp");
+                            menu.classList.add("hidden"); // Oculta después de animar
+                        },
+                        { once: true }
+            );}});
+        });
+    /* --------NAVBAR-------- */
+    /* --------FOOTER-------- */
+    fetch("./footer.xml")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("theFooter").innerHTML = data;
+        });
+    /* --------FOOTER-------- */
+});
 /* ---------------------------INSERCIÓN DE CÓDIGO REUTILIZABLE--------------------------- */
 
 /* ---------------------------PARALLAX--------------------------- */
