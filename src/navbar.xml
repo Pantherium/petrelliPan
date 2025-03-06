@@ -66,7 +66,7 @@
                 <p class="hover:drop-shadow-hoverNavTextShadow">
                     <a
                         class="drop-shadow-navTextShadow hover:underline decoration-1 underline-offset-4"
-                        href="#"
+                        href="./pedidos.html"
                         >Pedidos</a
                     >
                 </p>
