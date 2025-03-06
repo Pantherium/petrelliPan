@@ -870,6 +870,10 @@
     width: calc(var(--spacing) * 8);
     height: calc(var(--spacing) * 8);
   }
+  .size-96 {
+    width: calc(var(--spacing) * 96);
+    height: calc(var(--spacing) * 96);
+  }
   .size-full {
     width: 100%;
     height: 100%;
@@ -879,6 +883,9 @@
   }
   .h-24 {
     height: calc(var(--spacing) * 24);
+  }
+  .h-96 {
+    height: calc(var(--spacing) * 96);
   }
   .h-fit {
     height: fit-content;
@@ -900,6 +907,9 @@
   }
   .min-h-screen {
     min-height: 100vh;
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
@@ -1019,6 +1029,10 @@
   }
   .-translate-x-4 {
     --tw-translate-x: calc(var(--spacing) * -4);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .-translate-y-0 {
+    --tw-translate-y: calc(var(--spacing) * -0);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-y-0\.5 {
@@ -1641,6 +1655,12 @@
   .bg-\[var\(--my_variable\)\] {
     background-color: var(--my_variable);
   }
+  .bg-amber-400 {
+    background-color: var(--color-amber-400);
+  }
+  .bg-amber-950 {
+    background-color: var(--color-amber-950);
+  }
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
@@ -1667,6 +1687,9 @@
   }
   .bg-\[url\(\.\/recursos\/banners\/bannerPrincipal\.jpeg\)\] {
     background-image: url(./recursos/banners/bannerPrincipal.jpeg);
+  }
+  .bg-\[url\(\.\/recursos\/underConstruction\.png\)\] {
+    background-image: url(./recursos/underConstruction.png);
   }
   .bg-none {
     background-image: none;
@@ -1836,6 +1859,9 @@
   }
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
+  }
+  .pt-28 {
+    padding-top: calc(var(--spacing) * 28);
   }
   .pr-20 {
     padding-right: calc(var(--spacing) * 20);
